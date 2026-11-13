@@ -13,7 +13,7 @@
 
 Sistem Pakar Penentuan Prioritas Belajar Mahasiswa.
 
-Program ini dibuat untuk membantu mahasiswa menentukan prioritas belajar berdasarkan kondisi perkuliahan, seperti deadline tugas, jadwal ujian, tingkat kesulitan materi, pemahaman terhadap materi, tugas yang belum selesai, dan bobot nilai.
+Program ini dibuat untuk membantu mahasiswa menentukan materi atau tugas kuliah yang perlu didahulukan berdasarkan beberapa kondisi, seperti deadline tugas, jadwal ujian, tingkat kesulitan materi, pemahaman mahasiswa, tugas yang belum selesai, dan bobot nilai.
 
 Sistem memberikan tiga kategori hasil, yaitu:
 
@@ -151,7 +151,7 @@ Metode ini tidak menggunakan rumus perhitungan numerik karena proses penalaranny
 
 ## 5. Tiga Kasus Uji dan Screenshot
 
-Pengujian dilakukan untuk mengetahui apakah sistem dapat memberikan kesimpulan sesuai dengan fakta dan aturan yang telah dibuat.
+Pengujian dilakukan untuk mengetahui apakah sistem dapat memberikan kesimpulan sesuai dengan fakta dan aturan yang telah dibuat. Selain tiga pengujian kategori prioritas, ditambahkan satu pengujian ketika tidak ada aturan yang terpenuhi.
 
 ### Kasus 1
 
@@ -174,7 +174,7 @@ Pengujian dilakukan untuk mengetahui apakah sistem dapat memberikan kesimpulan s
 
 **Screenshot hasil pengujian:**
 
-![Kasus 1](screenshot/kasus1.png)
+![Kasus 1](screenshot/Kasus1.png)
 
 ### Kasus 2
 
@@ -197,7 +197,7 @@ Pengujian dilakukan untuk mengetahui apakah sistem dapat memberikan kesimpulan s
 
 **Screenshot hasil pengujian:**
 
-![Kasus 2](screenshot/kasus2.png)
+![Kasus 2](screenshot/Kasus2.png)
 
 ### Kasus 3
 
@@ -220,11 +220,25 @@ Pengujian dilakukan untuk mengetahui apakah sistem dapat memberikan kesimpulan s
 
 **Screenshot hasil pengujian:**
 
-![Kasus 3](screenshot/kasus3.png)
+![Kasus 3](screenshot/Kasus3.png)
+
+### Kasus 4
+
+**Kondisi yang dimasukkan:**
+
+Semua pertanyaan dijawab Tidak.
+
+**Hasil:** Tidak ada prioritas khusus yang dapat ditentukan.
+
+**Alasan:** Tidak ada fakta yang memenuhi kondisi aturan sehingga sistem tidak menghasilkan kesimpulan prioritas belajar.
+
+**Screenshot hasil pengujian:**
+
+![Kasus 4](screenshot/Kasus4.png)
 
 ## 6. Batas Keberlakuan Sistem
 
-Sistem pakar ini menggunakan pengetahuan yang disusun berdasarkan sumber dari Monash University, University of Sydney, dan Cornell University mengenai manajemen waktu serta strategi belajar. Sistem ditujukan untuk membantu mahasiswa menentukan prioritas belajar berdasarkan kondisi deadline tugas, jadwal ujian, tingkat kesulitan materi, pemahaman mahasiswa, dan bobot nilai. Sistem ini hanya dapat memberikan hasil berdasarkan fakta dan aturan yang telah dimasukkan ke dalam basis pengetahuan. Oleh karena itu, hasil yang diberikan merupakan saran atau rekomendasi untuk membantu mahasiswa mengatur kegiatan belajar, bukan keputusan akhir yang harus selalu diikuti. Mahasiswa tetap perlu mempertimbangkan kondisi dan kebutuhan belajarnya masing-masing.
+Sistem pakar ini menggunakan pengetahuan yang disusun berdasarkan sumber dari Monash University, University of Sydney, dan Cornell University mengenai manajemen waktu serta strategi belajar. Sistem ditujukan untuk membantu mahasiswa menentukan prioritas belajar berdasarkan kondisi deadline tugas, jadwal ujian, tingkat kesulitan materi, pemahaman mahasiswa, dan bobot nilai. Sistem hanya dapat memberikan hasil berdasarkan fakta dan aturan yang telah dimasukkan ke dalam basis pengetahuan. Oleh karena itu, hasil yang diberikan merupakan saran atau rekomendasi untuk membantu mahasiswa mengatur kegiatan belajar, bukan keputusan akhir yang harus selalu diikuti. Mahasiswa tetap perlu mempertimbangkan kondisi dan kebutuhan belajarnya masing-masing.
 
 ## 7. Penggunaan Alat Bantu AI
 
