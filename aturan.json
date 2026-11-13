@@ -1,0 +1,135 @@
+
+{
+    "judul": "Sistem Pakar Penentuan Prioritas Belajar Mahasiswa",
+
+    "metode": "Forward Chaining",
+
+    "batas": "Aturan ini disusun berdasarkan panduan pengelolaan waktu dan strategi belajar dari Monash University, University of Sydney, dan Cornell University. Program memberikan saran awal berdasarkan jawaban pengguna, bukan keputusan akademik yang mutlak.",
+
+    "pertanyaan": [
+        {
+            "fakta": "deadline_dekat",
+            "teks": "Apakah deadline tugas dalam 3 hari ke depan?"
+        },
+        {
+            "fakta": "ujian_dekat",
+            "teks": "Apakah ada ujian dalam 3 hari ke depan?"
+        },
+        {
+            "fakta": "materi_sulit",
+            "teks": "Apakah materi mata kuliah terasa sulit?"
+        },
+        {
+            "fakta": "pemahaman_rendah",
+            "teks": "Apakah kamu belum memahami sebagian besar materi?"
+        },
+        {
+            "fakta": "tugas_belum_selesai",
+            "teks": "Apakah masih ada tugas yang belum selesai?"
+        },
+        {
+            "fakta": "bobot_nilai_tinggi",
+            "teks": "Apakah tugas atau ujian memiliki bobot nilai tinggi?"
+        },
+        {
+            "fakta": "pemahaman_baik",
+            "teks": "Apakah kamu sudah memahami materi dengan baik?"
+        },
+        {
+            "fakta": "deadline_tidak_dekat",
+            "teks": "Apakah deadline masih lebih dari 3 hari atau belum ada?"
+        }
+    ],
+
+    "sumber": {
+        "S1": "Monash University - Key Time Management Skills - https://www.monash.edu/student-academic-success/goal-setting-and-time-management/key-time-management-skills",
+
+        "S2": "University of Sydney - Time Management - https://www.sydney.edu.au/students/study-skills/time-management.html",
+
+        "S3": "Cornell University - Effective Study Strategies - https://lsc.cornell.edu/how-to-study/studying-for-and-taking-exams/effective-study-strategies/"
+    },
+
+    "aturan": [
+        {
+            "id": "R1",
+            "jika": [
+                "deadline_dekat",
+                "ujian_dekat"
+            ],
+            "mode": "atau",
+            "maka": "tenggat_mendesak",
+            "sumber": ["S1", "S2"]
+        },
+
+        {
+            "id": "R2",
+            "jika": [
+                "materi_sulit",
+                "pemahaman_rendah"
+            ],
+            "mode": "dan",
+            "maka": "perlu_pendalaman",
+            "sumber": ["S2", "S3"]
+        },
+
+        {
+            "id": "R3",
+            "jika": [
+                "tugas_belum_selesai",
+                "tenggat_mendesak"
+            ],
+            "mode": "dan",
+            "maka": "beban_tugas_mendesak",
+            "sumber": ["S1", "S2"]
+        },
+
+        {
+            "id": "R4",
+            "jika": [
+                "tenggat_mendesak",
+                "bobot_nilai_tinggi"
+            ],
+            "mode": "dan",
+            "maka": "prioritas_utama",
+            "sumber": ["S1", "S2"]
+        },
+
+        {
+            "id": "R5",
+            "jika": [
+                "beban_tugas_mendesak"
+            ],
+            "mode": "dan",
+            "maka": "prioritas_utama",
+            "sumber": ["S1", "S2"]
+        },
+
+        {
+            "id": "R6",
+            "jika": [
+                "perlu_pendalaman",
+                "tugas_belum_selesai"
+            ],
+            "mode": "dan",
+            "maka": "prioritas_tinggi",
+            "sumber": ["S2", "S3"]
+        },
+
+        {
+            "id": "R7",
+            "jika": [
+                "pemahaman_baik",
+                "deadline_tidak_dekat"
+            ],
+            "mode": "dan",
+            "maka": "prioritas_rutin",
+            "sumber": ["S3"]
+        }
+    ],
+
+    "nama_kesimpulan": {
+        "prioritas_utama": "Prioritas Utama",
+        "prioritas_tinggi": "Prioritas Tinggi",
+        "prioritas_rutin": "Prioritas Rutin"
+    }
+}
